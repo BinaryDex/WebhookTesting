@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/995160496762257489/eDhRn-WoXeemP6gaIIbvRgXyby9jNfynwH72aWM7S6dm3LSBkMxE4e07nmjJ67PREwLX");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Dex!",
+        avatar_url: "",
+        content: "This message was sent through javascript!"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
